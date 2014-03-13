@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Arnold Sound Board</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+ 	<link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.1.0.min.css" />
+	<link rel="stylesheet" href="index.css" /> 
+
+    <script src="jquery.mobile/jquery-1.7.2.min"></script>
+	<script src="jquery.mobile/jquery.mobile-1.1.0.min.js"></script>
+
+	<script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
+
+
+
+
+ <style>
+@media all and (max-width: 30em) {
+.my-breakpoint .ui-block-a,
+.my-breakpoint .ui-block-b,
+.my-breakpoint .ui-block-c,
+.my-breakpoint .ui-block-d,
+.my-breakpoint .ui-block-e {
+width: 100%;
+float:none;
+}
+}
+@media all and (min-width: 30em) {
+.my-breakpoint.ui-grid-b .ui-block-a { width: 30.95%; }
+.my-breakpoint.ui-grid-b .ui-block-b,
+.my-breakpoint.ui-grid-b .ui-block-c { width: 30.925%; }
+}
+
+
+
+
+.custom-button .ui-btn-inner {
+    padding: 1 !important;    
+}
+
+.custom-button .ui-btn-inner .ui-btn-text  {
+    display: block !important;
+    height: 50px !important;
+    width: 100% !important;
+    background-image: url('res/icon/android/icon-36-ldpi.png') !important;
+    background-repeat: no-repeat  !important;
+    background-position: center  !important; 
+
+}
+
+.howard-kliner-icon .ui-btn-inner .ui-btn-text   {
+    display: block !important;
+    height: 50px !important;
+    width: 100% !important;
+    background-image: url('res/icon/android/icon-36-ldpi.png') !important;
+    background-repeat: no-repeat  !important;
+    background-position: center  !important; 
+
+}
+
+.rnold-classic-icon .ui-btn-inner .ui-btn-text    {
+    display: block !important;
+    height: 50px !important;
+    width: 100% !important;
+    background-image: url('res/icon/android/icon-36-ldpi-rnoldclassic.png') !important;
+    background-repeat: no-repeat  !important;
+    background-position: center  !important; 
+
+}
+
+
+
+
+#bg {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+	
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}
+
+</style>
+
+
+
+
+
+
+
+ <script>
+function playAudio(src) {
+if (device.platform == 'Android') {
+src = '/android_asset/www/' + src;
+}
+ 
+var media = new Media(src, success, error_error);
+ 
+media.play();
+}
+ 
+function success() {
+// ignore
+}
+ 
+function error_error(e) {
+alert('great error');
+alert(e.message);
+}
+
+
+$('#r_nold_classic_c').css("background-image", "url(/res/screen/android/screen-ldpi-portrait.png)");  
+$('#howard_cliner_c').css("background-image", "url(/res/screen/android/screen-hdpi-landscape.png)");  
+</script>
+
+
+
+</head>
+<body>
+
+		
+<div data-role="page" id="r_nold_classic" data-theme="a">
+  <div data-role="header" data-position="fixed">
+  <h1>RNold Classic</h1>
+  </div>
+
+  <div data-role="content" >
+	
+	<img src="res/screen/android/screen-mdpi-portrait.png" id="bg" alt="">
+	
+	<div role="main" class="ui-content" id="r_nold_classic_c">
+		<div class="ui-grid-b my-breakpoint">
+			<div class="ui-block-a"><div><button onclick="playAudio('Sounds/erased.mp3')">Erased</button></div></div>
+			<div class="ui-block-b"><div><button onclick="playAudio('Sounds/hello_cutie.mp3')">Hello, CutiePie</button></div></div>
+			<div class="ui-block-c"><div><button onclick="playAudio('Sounds/deep_trouble.mp3')">Deep Trouble</button></div></div>
+
+			<div class="ui-block-a"><div><button onclick="playAudio('Sounds/no_sh.mp3')">No Sh!t</button></div></div>
+			<div class="ui-block-b"><div><button onclick="playAudio('Sounds/sob.mp3')">S.O.B</button></div></div>
+			<div class="ui-block-c"><div><button onclick="playAudio('Sounds/t1_be_back.mp3')">I Be Back</button></div></div>
+
+			<div class="ui-block-a"><div><button onclick="playAudio('Sounds/t1_get_out.mp3')">GET Out!</button></div></div>
+			<div class="ui-block-b"><div><button onclick="playAudio('Sounds/t2_affirmative.mp3')">Affirmative</button></div></div>
+			<div class="ui-block-c"><div><button onclick="playAudio('Sounds/whats_the_matter.mp3')">Whats the Matter</button></div></div>				
+		</div>
+		
+	</div>
+
+
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <a href="#howard_cliner" data-role="button" data-inline="true" class = "howard-kliner-icon">HOWARD CLINER</a>
+	</div>
+</div> 
+
+<div data-role="page" id="howard_cliner" data-theme="a">
+  <div data-role="header" data-position="fixed">
+  <h1>Howard Kliner</h1>
+  </div>
+  
+  
+  
+  <div data-role="content" >
+  
+  	<img src="res/screen/android/screen-hdpi-portrait.png" id="bg" alt="">
+  
+	<div role="main" class="ui-content" id="howard_cliner_c">
+		<div class="ui-grid-b my-breakpoint">
+			<div class="ui-block-a"><div><button data-theme="a" onclick="playAudio('Sounds/how_many_miles.mp3')">How Many Miles</button></div></div>
+			<div class="ui-block-b"><div><button onclick="playAudio('Sounds/im_here_to_help_you.mp3')">I'm Howard Kliner</button></div></div>
+			<div class="ui-block-c"><div><button onclick="playAudio('Sounds/sweating.mp3')">Sweating</button></div></div>
+			
+			<div class="ui-block-a"><div><button onclick="playAudio('Sounds/pumped_up.mp3')">Pumped Up</button></div></div>
+			<div class="ui-block-b"><div><button onclick="playAudio('Sounds/golds_gym.mp3')">Golds Gym</button></div></div>
+			<div class="ui-block-c"><div><button onclick="playAudio('Sounds/elbows_knees.mp3')">Elbows Knees</button>	</div></div>			
+	
+			<div class="ui-block-a"><div><button onclick="playAudio('Sounds/very_nice.mp3')">Very Nice</button></div></div>
+			<div class="ui-block-b"><div><button onclick="playAudio('Sounds/very_good.mp3')">Very Good</button></div></div>
+			<div class="ui-block-c"><div><button onclick="playAudio('Sounds/so_good.mp3')">So Good</button>		</div></div>		
+		
+			<div class="ui-block-a"><div><button onclick="playAudio('Sounds/fbi.mp3')">FBI</button></div></div>
+			<div class="ui-block-b"><div><button onclick="playAudio('Sounds/keep_drinking.mp3')">keep Drinking</button></div></div>
+			<div class="ui-block-c"><div><button onclick="playAudio('Sounds/burns.mp3')">Burns</button>	</div></div>
+		</div>
+		
+	</div>
+	
+
+	<marquee scrollamount = "2" >Im Howard Kliner. .   .    .          .            Im here to help you. . .  .    . </marquee>
+  </div>
+	
+  <div data-role="footer" data-position="fixed">
+    <a href="#r_nold_classic" data-role="button"  data-inline="true" class="rnold-classic-icon">RNold Classic</a>
+  </div>
+</div> 
+
+</body>
+</html>

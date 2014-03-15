@@ -32,19 +32,7 @@ float:none;
 
 
 
-.custom-button .ui-btn-inner {
-    padding: 1 !important;    
-}
 
-.custom-button .ui-btn-inner .ui-btn-text  {
-    display: block !important;
-    height: 50px !important;
-    width: 100% !important;
-    background-image: url('res/icon/android/icon-36-ldpi.png') !important;
-    background-repeat: no-repeat  !important;
-    background-position: center  !important; 
-
-}
 
 .howard-kliner-icon .ui-btn-inner .ui-btn-text   {
     display: block !important;
@@ -69,15 +57,6 @@ float:none;
 
 
 
-#bg {
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-	
-  /* Preserve aspet ratio */
-  min-width: 100%;
-  min-height: 100%;
-}
 
 </style>
 
@@ -92,7 +71,7 @@ float:none;
   </div>
 
   <div data-role="content" >	
-	<img src="res/screen/android/screen-mdpi-portrait.png" id="bg" alt="">
+
 	
 	<div role="main" class="ui-content" id="r_nold_classic_c">
 		<div class="ui-grid-b my-breakpoint">
@@ -127,7 +106,7 @@ float:none;
   
   <div data-role="content" >
   
-  	<img src="res/screen/android/screen-hdpi-portrait.png" id="bg" alt="">
+ 
   
 	<div role="main" class="ui-content" id="howard_cliner_c">
 		<div class="ui-grid-b my-breakpoint">
@@ -162,7 +141,7 @@ float:none;
     <script src="jquery.mobile/jquery-1.7.2.min"></script>
 	<script src="jquery.mobile/jquery.mobile-1.1.0.min.js"></script>
 
-	<!-- <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script> -->
+	<script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
 
 	
 	 <script>
@@ -184,8 +163,7 @@ float:none;
 			alert(e.message);
 		}
 
-		$('#r_nold_classic_c').css("background-image", "url(/res/screen/android/screen-ldpi-portrait.png)");  
-		$('#howard_cliner_c').css("background-image", "url(/res/screen/android/screen-hdpi-landscape.png)");  
+ 
 	</script>
 	
 	

@@ -7,10 +7,7 @@
  	<link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.1.0.min.css" />
 	<link rel="stylesheet" href="index.css" /> 
 
-    <script src="jquery.mobile/jquery-1.7.2.min"></script>
-	<script src="jquery.mobile/jquery.mobile-1.1.0.min.js"></script>
 
-	<script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
 
 
 
@@ -85,38 +82,6 @@ float:none;
 </style>
 
 
-
-
-
-
-
- <script>
-function playAudio(src) {
-if (device.platform == 'Android') {
-src = '/android_asset/www/' + src;
-}
- 
-var media = new Media(src, success, error_error);
- 
-media.play();
-}
- 
-function success() {
-// ignore
-}
- 
-function error_error(e) {
-alert('great error');
-alert(e.message);
-}
-
-
-$('#r_nold_classic_c').css("background-image", "url(/res/screen/android/screen-ldpi-portrait.png)");  
-$('#howard_cliner_c').css("background-image", "url(/res/screen/android/screen-hdpi-landscape.png)");  
-</script>
-
-
-
 </head>
 <body>
 
@@ -126,8 +91,7 @@ $('#howard_cliner_c').css("background-image", "url(/res/screen/android/screen-hd
   <h1>RNold Classic</h1>
   </div>
 
-  <div data-role="content" >
-	
+  <div data-role="content" >	
 	<img src="res/screen/android/screen-mdpi-portrait.png" id="bg" alt="">
 	
 	<div role="main" class="ui-content" id="r_nold_classic_c">
@@ -144,7 +108,6 @@ $('#howard_cliner_c').css("background-image", "url(/res/screen/android/screen-hd
 			<div class="ui-block-b"><div><button onclick="playAudio('Sounds/t2_affirmative.mp3')">Affirmative</button></div></div>
 			<div class="ui-block-c"><div><button onclick="playAudio('Sounds/whats_the_matter.mp3')">Whats the Matter</button></div></div>				
 		</div>
-		
 	</div>
 
 
@@ -168,7 +131,7 @@ $('#howard_cliner_c').css("background-image", "url(/res/screen/android/screen-hd
   
 	<div role="main" class="ui-content" id="howard_cliner_c">
 		<div class="ui-grid-b my-breakpoint">
-			<div class="ui-block-a"><div><button data-theme="a" onclick="playAudio('Sounds/how_many_miles.mp3')">How Many Miles</button></div></div>
+			<div class="ui-block-a"><div><button onclick="playAudio('Sounds/how_many_miles.mp3')">How Many Miles</button></div></div>
 			<div class="ui-block-b"><div><button onclick="playAudio('Sounds/im_here_to_help_you.mp3')">I'm Howard Kliner</button></div></div>
 			<div class="ui-block-c"><div><button onclick="playAudio('Sounds/sweating.mp3')">Sweating</button></div></div>
 			
@@ -195,6 +158,37 @@ $('#howard_cliner_c').css("background-image", "url(/res/screen/android/screen-hd
     <a href="#r_nold_classic" data-role="button"  data-inline="true" class="rnold-classic-icon">RNold Classic</a>
   </div>
 </div> 
+
+    <script src="jquery.mobile/jquery-1.7.2.min"></script>
+	<script src="jquery.mobile/jquery.mobile-1.1.0.min.js"></script>
+
+	<!-- <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script> -->
+
+	
+	 <script>
+		function playAudio(src) {
+			if (device.platform == 'Android') {
+				src = '/android_asset/www/' + src;
+			}
+			 
+			var media = new Media(src, success, error_error);
+				media.play();
+		}
+		 
+		function success() {
+		// ignore
+		}
+		 
+		function error_error(e) {
+			alert('great error');
+			alert(e.message);
+		}
+
+		$('#r_nold_classic_c').css("background-image", "url(/res/screen/android/screen-ldpi-portrait.png)");  
+		$('#howard_cliner_c').css("background-image", "url(/res/screen/android/screen-hdpi-landscape.png)");  
+	</script>
+	
+	
 
 </body>
 </html>
